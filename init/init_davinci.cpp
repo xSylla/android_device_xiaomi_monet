@@ -90,11 +90,24 @@ void vendor_load_properties() {
         set_ro_build_prop("fingerprint", "Xiaomi/davinci/davinci:10/QKQ1.190825.002/V11.0.6.0.QFJCNXM:user/release-keys");
         property_override("ro.build.description", "davinci-user 10 QKQ1.190825.002 V11.0.6.0.QFJCNXM release-keys");
     } else if (region == "INDIA") {
-        set_ro_product_prop("model", "Redmi K20");
-        set_ro_product_prop("device", "davinciin");
-        set_ro_build_prop("fingerprint", "Xiaomi/davinciin/davinciin:10/QKQ1.190825.002/V11.0.3.0.QFJINXM:user/release-keys");
-        property_override("ro.build.description", "davinciin-user 10 QKQ1.190825.002 V11.0.3.0.QFJINXM release-keys");
-        property_override("ro.product.mod_device", "davinciin_in_global");
+        model = "Redmi K20";
+        device = "davinciin";
+        fingerprint = "Xiaomi/davinciin/davinciin:10/QKQ1.190825.002/V12.0.3.0.QFJINXM:user/release-keys";
+        description = "davinciin-user 10 QKQ1.190825.002 V12.0.3.0.QFJINXM release-keys";
+        mod_device = "davinciin_in_global";
+    }
+
+    // SafetyNet workaround
+    property_override("ro.boot.verifiedbootstate", "green");
+    fingerprint = "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys";
+    description = "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys";
+
+    set_ro_build_prop("fingerprint", fingerprint);
+    set_ro_product_prop("device", device);
+    set_ro_product_prop("model", model);
+    property_override("ro.build.description", description.c_str());
+    if (mod_device != "") {
+        property_override("ro.product.mod_device", mod_device.c_str());
     }
 
     property_override("ro.boot.hardware.revision", hardware_revision.c_str());
