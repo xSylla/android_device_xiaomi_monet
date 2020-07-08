@@ -51,4 +51,7 @@
 
     <!-- Preferred refresh rate at keyguard, if supported by the display -->
     <integer name="config_keyguardRefreshRate">120</integer>
+
+    <!-- Color of the FOD view -->
+    <color name="config_fodColor">#00ffff</color>
 </resources>
