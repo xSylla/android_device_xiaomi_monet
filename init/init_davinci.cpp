@@ -80,7 +80,9 @@ void set_ro_product_prop(const std::string &prop, const std::string &value) {
 
 void vendor_load_properties() {
     std::string region;
+    std::string hardware_revision;
     region = GetProperty("ro.boot.hwc", "GLOBAL");
+    hardware_revision = GetProperty("ro.boot.hwversion", "UNKNOWN");
 
     if (region == "GLOBAL") {
         set_ro_product_prop("model", "Mi 9T");
@@ -100,4 +102,6 @@ void vendor_load_properties() {
         property_override("ro.build.description", "davinciin-user 10 QKQ1.190825.002 V11.0.3.0.QFJINXM release-keys");
         property_override("ro.product.mod_device", "davinciin_in_global");
     }
+
+    property_override("ro.boot.hardware.revision", hardware_revision.c_str());
 }
