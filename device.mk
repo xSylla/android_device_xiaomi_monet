@@ -185,6 +185,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES += \
     signapk
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.monet
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
