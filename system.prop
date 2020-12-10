@@ -1,0 +1,52 @@
+# displayfeature use poll to monitor backlight brightness
+ro.vendor.bl.poll=true
+
+# System property for AD
+ro.vendor.display.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.sensortype=2
+
+#support unlimited color temperature adjust
+ro.colorpick_adjust=true
+ro.all_modes.colorpick_adjust=true
+
+# system prop for Nfc UICC SE hal enabled
+persist.vendor.radio.uicc_se_enabled=false
+
+# prop for displayfeture cabc/bcbc/dfps
+ro.vendor.cabc.enable=true
+ro.vendor.bcbc.enable=false
+ro.vendor.dfps.enable=true
+
+#for CTS fps
+ro.vendor.display.default_fps=120
+
+# qcom prop,idle timeout, non-idle switch to idle time
+vendor.display.idle_time=1100
+
+#initialize QCA1530 detection
+sys.qca1530=detect
+
+#system property for displayfeature hidl
+sys.displayfeature_hidl=true
+
+vendor.hbm.enable=true
+
+# FP
+ro.fingerprint.cleanup.unused=false
+
+# USB debugging
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
+
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
+# OEM Unlock
+ro.oem_unlock_supported=0

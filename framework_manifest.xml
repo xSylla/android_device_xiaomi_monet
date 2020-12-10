@@ -1,0 +1,12 @@
+<manifest version="1.0" type="framework">
+    <hal format="hidl" override="true">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISecureElement</name>
+            <regex-instance>SIM[1-9][0-9]*</regex-instance>
+            <regex-instance>eSE[1-9][0-9]*</regex-instance>
+        </interface>
+    </hal>
+</manifest>
