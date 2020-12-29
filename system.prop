@@ -46,6 +46,7 @@ persist.mm.enable.prefetch=true
 #Netflix custom property
 ro.netflix.bsp_rev=Q845-05000-1
 
+<<<<<<< HEAD
 #
 # system props for the data modules
 #
@@ -75,6 +76,12 @@ persist.fuse_sdcard=true
 #System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.aac_frm_ctl.enabled=true
+=======
+# Bluetooth
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+persist.vendor.btstack.enable.splita2dp=true
+vendor.bluetooth.soc=cherokee
+>>>>>>> d4f4287... lmi: switch to AOSP BT
 
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
@@ -236,3 +243,6 @@ ro.com.google.clientidbase=android-xiaomi
 ro.sf.lcd_density=440
 ro.lmk.use_minfree_levels=true
 ro.vendor.radio.features_common=3
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+persist.vendor.btstack.enable.splita2dp=true
+vendor.bluetooth.soc=cherokee
