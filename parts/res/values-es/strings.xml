@@ -13,7 +13,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="device_specific_settings_title">XiaomiParts</string>
-    <string name="device_specific_settings_summary">Ajustes específicos de Redmi K30 5G.</string>
+    <string name="device_specific_settings_summary">Ajustes específicos de Mi 10 Lite 5G.</string>
     <string name="device_min_refresh_rate">Tasa de refresco</string>
     <string name="device_pill_style_notch">Doble agujero</string>
     <string name="msg_device_need_restart">Por favor, reinicia la interfaz del sistema para hacer efectivo este ajuste.</string>

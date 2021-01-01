@@ -14,7 +14,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/picasso/picasso-vendor.mk)
+$(call inherit-product, vendor/xiaomi/monet/monet-vendor.mk)
 
 include $(LOCAL_PATH)/system_prop.mk
 include $(LOCAL_PATH)/system.prop
@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_picasso
+    android.hardware.light@2.0-service.xiaomi_monet
 
 # NFC
 PRODUCT_PACKAGES += \

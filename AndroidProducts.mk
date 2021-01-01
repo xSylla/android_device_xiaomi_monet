@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/octavi_picasso.mk
+    $(LOCAL_DIR)/octavi_monet.mk
 
 COMMON_LUNCH_CHOICES := \
-    octavi_picasso-eng \
-    octavi_picasso-userdebug \
-    octavi_picasso-user
+    octavi_monet-eng \
+    octavi_monet-userdebug \
+    octavi_monet-user
