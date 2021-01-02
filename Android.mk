@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 AICP
+# Copyright (C) 2020 RevengeOS
 #
 # SPDX-License-Identifier: Apache-2.0
 #
