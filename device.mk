@@ -16,11 +16,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/monet/monet-vendor.mk)
 
-include $(LOCAL_PATH)/system_prop.mk
-include $(LOCAL_PATH)/system.prop
-include $(LOCAL_PATH)/product_prop.mk
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 BOARD_BUILD_PRODUCT_IMAGE := true
 PRODUCT_SHIPPING_API_LEVEL := 29
