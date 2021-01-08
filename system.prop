@@ -46,7 +46,6 @@ persist.mm.enable.prefetch=true
 #Netflix custom property
 ro.netflix.bsp_rev=Q845-05000-1
 
-<<<<<<< HEAD
 #
 # system props for the data modules
 #
@@ -76,12 +75,6 @@ persist.fuse_sdcard=true
 #System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.aac_frm_ctl.enabled=true
-=======
-# Bluetooth
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
-persist.vendor.btstack.enable.splita2dp=true
-vendor.bluetooth.soc=cherokee
->>>>>>> d4f4287... lmi: switch to AOSP BT
 
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
@@ -194,6 +187,7 @@ ro.charger.enable_suspend = 1
 #
 #Netflix custom property for sm7250
 ro.netflix.bsp_rev=Q7250-19133-1
+ro.netflix.bsp_rev=Q855-16947-1
 # end of device/qcom/qssi/system_sm7250.prop
 
 #
