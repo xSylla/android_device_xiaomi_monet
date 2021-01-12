@@ -81,7 +81,7 @@ TARGET_USES_HWC2 := true
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Fingerprint
 SOONG_CONFIG_NAMESPACES += XIAOMI_MONET_FOD
@@ -96,6 +96,10 @@ BOARD_HAVE_QCOM_FM := true
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/c2_manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+ODM_MANIFEST_FILES += $(DEVICE_PATH)/configs/hidl/manifest-qva.xml
 
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
@@ -156,10 +160,11 @@ BUILD_WITHOUT_VENDOR := true
 BOARD_USES_METADATA_PARTITION := true
 
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/prop/odm.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/prop/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/prop/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/prop/vendor.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/prop/product.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
