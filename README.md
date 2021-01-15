@@ -1,5 +1,3 @@
-NOT READY FOR DAILY USAGE
-
 Device configuration for Xiaomi Mi 10 Lite
 =========================================
 
