@@ -1,2 +1,2 @@
-allow hal_power input_device:dir search;
-allow hal_power input_device:chr_file rw_file_perms;
+allow hal_power sysfs_dt2w:dir search;
+allow hal_power sysfs_dt2w:file rw_file_perms;
