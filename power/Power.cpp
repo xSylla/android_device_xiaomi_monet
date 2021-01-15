@@ -39,7 +39,6 @@
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
-#include <linux/input.h>
 
 using ::aidl::android::hardware::power::BnPower;
 using ::aidl::android::hardware::power::IPower;
@@ -49,47 +48,6 @@ using ::aidl::android::hardware::power::Boost;
 using ::ndk::ScopedAStatus;
 using ::ndk::SharedRefBase;
 
-constexpr int kWakeupModeOff = 4;
-constexpr int kWakeupModeOn = 5;
-
-namespace {
-
-int open_ts_input() {
-    int fd = -1;
-    DIR *dir = opendir("/dev/input");
-
-    if (dir != NULL) {
-        struct dirent *ent;
-
-        while ((ent = readdir(dir)) != NULL) {
-            if (ent->d_type == DT_CHR) {
-                char absolute_path[PATH_MAX] = {0};
-                char name[80] = {0};
-
-                strcpy(absolute_path, "/dev/input/");
-                strcat(absolute_path, ent->d_name);
-
-                fd = open(absolute_path, O_RDWR);
-                if (ioctl(fd, EVIOCGNAME(sizeof(name) - 1), &name) > 0) {
-                    if (strcmp(name, "atmel_mxt_ts") == 0 || strcmp(name, "fts_ts") == 0 ||
-                            strcmp(name, "fts") == 0 || strcmp(name, "ft5x46") == 0 ||
-                            strcmp(name, "synaptics_dsx") == 0 ||
-                            strcmp(name, "fts_521") == 0 ||
-                            strcmp(name, "NVTCapacitiveTouchScreen") == 0)
-                        break;
-                }
-
-                close(fd);
-                fd = -1;
-            }
-        }
-
-        closedir(dir);
-    }
-
-    return fd;
-}
-}
 namespace aidl {
 namespace android {
 namespace hardware {
@@ -104,15 +62,9 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(INFO) << "Power setMode: " << static_cast<int32_t>(type) << " to: " << enabled;
     switch(type){
         case Mode::DOUBLE_TAP_TO_WAKE:
-            {
-            int fd = open_ts_input();
-            struct input_event ev;
-            ev.type = EV_SYN;
-            ev.code = SYN_CONFIG;
-            ev.value = enabled ? kWakeupModeOn : kWakeupModeOff;
-            write(fd, &ev, sizeof(ev));
-            close(fd);
-           } break;
+            ::android::base::WriteStringToFile(enabled ? "1" : "0",
+                                               "/sys/devices/platform/soc/984000.i2c/i2c-1/1-0038/fts_gesture_mode", true);
+            break;
         case Mode::LOW_POWER:
         case Mode::LAUNCH:
         case Mode::EXPENSIVE_RENDERING:
