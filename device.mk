@@ -106,9 +106,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_monet
 
-PRODUCT_PACKAGES += \
-    FODParts
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
@@ -189,10 +186,6 @@ PRODUCT_PACKAGES += \
 # OTA
 PRODUCT_HOST_PACKAGES += \
     signapk
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.monet
 
 # RCS
 PRODUCT_PACKAGES += \
