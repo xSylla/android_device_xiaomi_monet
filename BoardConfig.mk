@@ -105,8 +105,8 @@ ODM_MANIFEST_FILES += $(DEVICE_PATH)/configs/hidl/manifest-qva.xml
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_davinci
-TARGET_RECOVERY_DEVICE_MODULES := libinit_davinci
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_monet
+TARGET_RECOVERY_DEVICE_MODULES := libinit_monet
 
 # Kernel
 BOARD_KERNEL_BASE := 0x0000

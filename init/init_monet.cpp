@@ -1,6 +1,5 @@
 /*
    Copyright (C) 2020 The LineageOS Project.
-
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -78,29 +76,30 @@ void vendor_load_properties() {
     region = GetProperty("ro.boot.hwc", "GLOBAL");
     hardware_revision = GetProperty("ro.boot.hwversion", "UNKNOWN");
 
+    std::string model;
+    std::string device;
+    std::string fingerprint;
+    std::string description;
+    std::string mod_device;
+
     if (region == "GLOBAL") {
-        set_ro_product_prop("model", "Mi 9T");
-        set_ro_product_prop("device", "davinci");
-        set_ro_build_prop("fingerprint", "Xiaomi/davinci/davinci:10/QKQ1.190825.002/V11.0.5.0.QFJMIXM:user/release-keys");
-        property_override("ro.build.description", "davinci-user 10 QKQ1.190825.002 V11.0.5.0.QFJMIXM release-keys");
-        property_override("ro.product.mod_device", "davinci_global");
-    } else if (region == "CN") {
-        set_ro_product_prop("model", "Redmi K20");
-        set_ro_product_prop("device", "davinci");
-        set_ro_build_prop("fingerprint", "Xiaomi/davinci/davinci:10/QKQ1.190825.002/V11.0.6.0.QFJCNXM:user/release-keys");
-        property_override("ro.build.description", "davinci-user 10 QKQ1.190825.002 V11.0.6.0.QFJCNXM release-keys");
-    } else if (region == "INDIA") {
-        model = "Redmi K20";
-        device = "davinciin";
-        fingerprint = "Xiaomi/davinciin/davinciin:10/QKQ1.190825.002/V12.0.3.0.QFJINXM:user/release-keys";
-        description = "davinciin-user 10 QKQ1.190825.002 V12.0.3.0.QFJINXM release-keys";
-        mod_device = "davinciin_in_global";
+        model = "Mi 10 Lite 5G";
+        device = "monet";
+        fingerprint = "xiaomi/monet_global/monet:11/RKQ1.200826.002/V12.1.1.0.RJIMIXM:user/release-keys";
+        description = "monet-user 11 RKQ1.200826.002 V12.1.1.0.RJIMIXM release-keys";
+        mod_device = "monet_global";
+    } else if (region == "EEA") {
+        model = "Mi 10 Lite 5G";
+        device = "monet";
+        fingerprint = "xiaomi/monet_eea/monet:11/RKQ1.200826.002/V12.1.3.0.RJIEUXM:user/release-keys";
+        description = "monet-user 11 RKQ1.200826.002 V12.1.3.0.RJIEUXM release-keys";
+        mod_device = "monet_eea";
     }
 
     // SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
-    fingerprint = "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys";
-    description = "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys";
+    fingerprint = "xiaomi/monet_global/monet:11/RKQ1.200826.002/V12.1.1.0.RJIMIXM:user/release-keys";
+    description = "monet-user 11 RKQ1.200826.002 V12.1.1.0.RJIMIXM release-keys";
 
     set_ro_build_prop("fingerprint", fingerprint);
     set_ro_product_prop("device", device);
