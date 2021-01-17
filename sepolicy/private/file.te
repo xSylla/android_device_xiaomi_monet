@@ -2,4 +2,3 @@
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_fod, sysfs_type, fs_type;
 type sysfs_fpc_proximity, sysfs_type, fs_type;
-type sysfs_dt2w, sysfs_type, fs_type;
