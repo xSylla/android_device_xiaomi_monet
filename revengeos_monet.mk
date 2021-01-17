@@ -20,30 +20,11 @@ PRODUCT_BRAND := Mi
 PRODUCT_MODEL := Mi 10 Lite 5G
 PRODUCT_MANUFACTURER := Mi
 
-# Google Apps
-WITH_GAPPS=true
-TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # RevengeOS Device Maintainers
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="xSylla"
-
-# Adds face unlock if package is available on ROM source.
-TARGET_SUPPORT_FACE_UNLOCK := true
-
-# Build info
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=monet \
-    PRODUCT_NAME=monet \
-    PRIVATE_BUILD_DISC="redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
