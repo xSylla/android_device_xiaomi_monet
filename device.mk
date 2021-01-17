@@ -69,11 +69,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libhidltransport
-    
-# Charging
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
 
 # Configs
 PRODUCT_COPY_FILES += \
