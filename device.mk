@@ -70,9 +70,9 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libhidltransport
 
-# CustomDoze
+# DeviceSettings
 PRODUCT_PACKAGES += \
-    CustomDoze
+    XiaomiParts
 
 # Display
 PRODUCT_PACKAGES += \
