@@ -10,7 +10,7 @@ It was announced in March 2020. Release date was June 2020.
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Octa-core (1x2.4 GHz Kryo 475 Prime & 1x2.2 GHz Kryo 475 Gold & 6x1.8 GHz Kryo 475 Silver)
-Chipset | Qualcomm SDM765 Snapdragon 765G
+Chipset | Qualcomm SM7250 Snapdragon 765G
 GPU     | Adreno 620
 Memory  | 6/8 GB RAM
 Shipped Android Version | 10
