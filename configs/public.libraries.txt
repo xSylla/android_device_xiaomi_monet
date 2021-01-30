@@ -37,3 +37,35 @@ libSNPE.so 64
 libPlatformValidatorShared.so 64
 libc++_shared.so 64
 libsnpe_dsp_domains_v2.so 64
+libqvrservice_client.qti.so
+libqvrcamera_client.qti.so
+libupdateprof.qti.so
+libthermalclient.qti.so
+libQOC.qti.so
+libandroid.so
+libaaudio.so
+libamidi.so
+libbinder_ndk.so
+libc.so
+libcamera2ndk.so
+libdl.so
+libEGL.so
+libGLESv1_CM.so
+libGLESv2.so
+libGLESv3.so
+libicui18n.so
+libicuuc.so
+libjnigraphics.so
+liblog.so
+libmediandk.so
+libm.so
+libnativewindow.so
+libneuralnetworks.so nopreload
+libOpenMAXAL.so
+libOpenSLES.so
+libRS.so
+libstdc++.so
+libsync.so
+libvulkan.so
+libwebviewchromium_plat_support.so
+libz.so
