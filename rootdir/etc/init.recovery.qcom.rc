@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -44,7 +44,11 @@ on init
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     setprop sys.usb.configfs 1
 
-    start init-recovery-qcom-sh
+on property:ro.boot.usbconfigfs=false
+   setprop sys.usb.configfs 0
+
+on property:ro.boot.recover_usb=*
+    write /sys/bus/platform/devices/a600000.ssusb/mode "peripheral"
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -59,8 +63,4 @@ on property:sys.usb.ffs.ready=1
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-
-service init-recovery-qcom-sh /init.recovery.qcom.sh
-    disabled
-    
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice 
