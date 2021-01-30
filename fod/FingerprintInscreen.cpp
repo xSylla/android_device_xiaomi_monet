@@ -27,6 +27,11 @@
 #define PARAM_NIT_NONE 0
 
 #define TOUCH_FOD_ENABLE 10
+#define TOUCH_AOD_ENABLE 11
+
+#define FOD_POS_X 445
+#define FOD_POS_Y 2025
+#define FOD_SIZE 190
 
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 

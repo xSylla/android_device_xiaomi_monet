@@ -2,7 +2,7 @@
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state    u:object_r:sysfs_fpc_proximity:s0
 
 # HALs
-/system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_monet    u:object_r:hal_fod_monet_exec:s0
+/system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_lito    u:object_r:hal_fod_lito_exec:s0
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.light@2\.0-service    u:object_r:hal_light_default_exec:s0
 
 # Kernel modules in /system
