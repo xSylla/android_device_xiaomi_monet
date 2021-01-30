@@ -98,8 +98,8 @@ void vendor_load_properties() {
 
     // SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
-    fingerprint = "xiaomi/monet_global/monet:11/RKQ1.200826.002/V12.1.1.0.RJIMIXM:user/release-keys";
-    description = "monet-user 11 RKQ1.200826.002 V12.1.1.0.RJIMIXM release-keys";
+    fingerprint = "google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys";
+    description = "redfin-user 11 RQ1A.201205.010 6953398 release-keys";
 
     set_ro_build_prop("fingerprint", fingerprint);
     set_ro_product_prop("device", device);
