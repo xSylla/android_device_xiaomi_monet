@@ -1,4 +1,2 @@
 # sysfs
-type sysfs_battery_supply, sysfs_type, fs_type;
-type sysfs_fod, sysfs_type, fs_type;
-type sysfs_fpc_proximity, sysfs_type, fs_type;
+type sysfs_oem_wireless, fs_type, sysfs_type;
