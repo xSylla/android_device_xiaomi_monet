@@ -169,9 +169,16 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay-rom
 
-# Overlays -- Override vendor ones
+# D Overlays
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
+    WifiOverlay \
+    XiaomiFrameworks \
+    XiaomiSystemUI
+
+# Overlays - override vendor ones
 PRODUCT_PACKAGES += \
     FrameworksResCommon \
     FrameworksResTarget \
