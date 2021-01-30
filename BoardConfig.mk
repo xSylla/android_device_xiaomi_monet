@@ -164,11 +164,10 @@ BUILD_WITHOUT_VENDOR := true
 BOARD_USES_METADATA_PARTITION := true
 
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/prop/odm.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/prop/system.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/prop/system_ext.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/prop/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/prop/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/props/system_ext.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/props/product.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true

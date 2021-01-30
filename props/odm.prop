@@ -1,3 +1,4 @@
+# Audio
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
 vendor.audio.feature.anc_headset.enable=true
@@ -40,4 +41,6 @@ vendor.audio.feature.vbat.enable=true
 vendor.audio.feature.wsa.enable=false
 vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.snd_mon.enable=true
+
+# Support
 ro.vendor.qti.va_odm.support=1
