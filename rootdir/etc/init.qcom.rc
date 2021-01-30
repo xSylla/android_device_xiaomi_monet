@@ -1,14 +1,26 @@
-on boot
-    # Fingerprint
-    chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
+import /system/etc/init/init.safailnet.rc
 
-on early-init
-    # Load some kernel modules we put in /system instead of /vendor
-    exec u:r:modprobe:s0 -- /system/bin/modprobe -a -d \
-        /system/lib/modules wlan rmnet_perf rmnet_shs
+on post-fs-data
 
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
     class late_start
     user system
     group system input wakelock
+
+on property:init.svc.cnss_diag=running
+    stop cnss_diag
+
+on property:init.svc.tcpdump=running
+    stop tcpdump
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
+
+on property:persist.sys.device_provisioned=1
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
+    setprop dalvik.vm.dex2oat-threads 6
+
+on boot
+# Porco dio abilitati che non so come altro fare oh, mannaggia al cristo di power che non vuole funzionà, pixel 5, sappi che prenderò il powerlib da te stronzo
+    write /sys/devices/platform/soc/984000.i2c/i2c-1/1-0038/fts_gesture_mode 1
