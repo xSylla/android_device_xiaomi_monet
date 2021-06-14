@@ -28,14 +28,14 @@ xiaomi_lito_fod_hal_cc_defaults {
 }
 
 cc_binary {
-    name: "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_lito",
+    name: "vendor.lineage.biometrics.fingerprint.inscreen@1.1-service.xiaomi_lito",
     defaults: [
         "hidl_defaults",
         "xiaomi_lito_fod_hal_defaults",
     ],
     relative_install_path: "hw",
-    init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_lito.rc"],
-    vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_lito.xml"],
+    init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.1-service.xiaomi_lito.rc"],
+    vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.1-service.xiaomi_lito.xml"],
     srcs: ["service.cpp", "FingerprintInscreen.cpp"],
     shared_libs: [
         "libbase",
@@ -44,7 +44,7 @@ cc_binary {
         "libhidlbase",
         "liblog",
         "libutils",
-        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "vendor.lineage.biometrics.fingerprint.inscreen@1.1",
         "//hardware/xiaomi:vendor.goodix.hardware.biometrics.fingerprint@2.1",
         "//hardware/xiaomi:vendor.xiaomi.hardware.displayfeature@1.0",
         "//hardware/xiaomi:vendor.xiaomi.hardware.fingerprintextension@1.0",
