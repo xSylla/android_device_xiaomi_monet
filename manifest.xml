@@ -317,11 +317,6 @@
         <fqname>@3.0::IRTPService/imsrtpservice</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.xiaomi.hardware.motor</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IMotor/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.xiaomi.hardware.touchfeature</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::ITouchFeature/default</fqname>
@@ -330,5 +325,10 @@
         <name>android.hardware.health</name>
         <transport>hwbinder</transport>
         <fqname>@2.1::IHealth/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.displayfeature</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IDisplayFeature/default</fqname>
     </hal>
 </manifest>

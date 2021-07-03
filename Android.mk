@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter monet picasso vangogh,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),monet)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

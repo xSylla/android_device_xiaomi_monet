@@ -8,6 +8,10 @@
 
 set -e
 
+DEVICE=monet
+VENDOR=xiaomi
+INITIAL_COPYRIGHT_YEAR=2020
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -21,28 +25,14 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-# Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
-# Warning headers and guards
-write_headers "monet picasso vangogh"
+# Copyright headers and guards
+write_headers "${DEVICE}"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
 write_footers
-
-if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
-
-    # Warning headers and guards
-    write_headers
-
-    # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
-
-    # Finish
-    write_footers
-fi
